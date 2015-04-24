@@ -1,5 +1,9 @@
 class DependencyManagement {
-    def inlinePlugins = ['transmart-core': 'transmart-core-db']
+    def inlinePlugins = [
+            'transmart-core': 'transmart-core-db',
+            'rdc-modules': 'Rmodules',
+            'folder-management': 'folder-management-plugin'
+    ]
 
     def configureRepositories(dsl) {
         dsl.repositories {
@@ -30,16 +34,16 @@ class DependencyManagement {
             runtime ':transmart-core:1.2.3'
             compile ':transmart-gwas:1.2.3'
             //// already included in transmart-gwas
-            //compile ':transmart-legacy-db:1.2.3'
+            compile ':transmart-legacy-db:1.2.3'
             //// already included in transmart-gwas
             //compile ':folder-management:1.2.3'
             //// already included in transmart-gwas, folder-management
-            //compile ':search-domain:1.2.3'
+            compile ':search-domain:1.2.3'
             //// already included in search-domain, transmart-gwas,
             //                       folder-management
-            //compile ':biomart-domain:1.2.3'
+            compile ':biomart-domain:1.2.3'
             //// already included in biomart-domain
-            //compile ':transmart-java:1.2.3'
+            compile ':transmart-java:1.2.3'
             runtime ':dalliance-plugin:0.2-SNAPSHOT'
             runtime ':transmart-mydas:0.1-SNAPSHOT'
             runtime(':transmart-rest-api:1.2.3') {
