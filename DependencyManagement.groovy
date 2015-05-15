@@ -30,30 +30,30 @@ class DependencyManagement {
 
     def internalDependencies(dsl) {
         new InternalDependenciesFilter(dsl: dsl).with {
-            compile ':rdc-rmodules:1.2.3'
-            runtime ':transmart-core:1.2.3'
-            compile ':transmart-gwas:1.2.3'
+            compile ':rdc-rmodules:1.2.4'
+            runtime ':transmart-core:1.2.4'
+            compile ':transmart-gwas:1.2.4'
             //// already included in transmart-gwas
-            compile ':transmart-legacy-db:1.2.3'
+            compile ':transmart-legacy-db:1.2.4'
             //// already included in transmart-gwas
-            //compile ':folder-management:1.2.3'
+            //compile ':folder-management:1.2.4'
             //// already included in transmart-gwas, folder-management
-            compile ':search-domain:1.2.3'
+            compile ':search-domain:1.2.4'
             //// already included in search-domain, transmart-gwas,
             //                       folder-management
-            compile ':biomart-domain:1.2.3'
+            compile ':biomart-domain:1.2.4'
             //// already included in biomart-domain
-            compile ':transmart-java:1.2.3'
+            compile ':transmart-java:1.2.4'
             runtime ':dalliance-plugin:0.2-SNAPSHOT'
             runtime ':transmart-mydas:0.1-SNAPSHOT'
-            runtime(':transmart-rest-api:1.2.3') {
+            runtime(':transmart-rest-api:1.2.4') {
                 excludes 'transmart-core'
                 excludes 'transmart-core-db-tests'
             }
-            runtime ':blend4j-plugin:1.2.3'
-            runtime ':transmart-metacore-plugin:1.2.3'
+            runtime ':blend4j-plugin:1.2.4'
+            runtime ':transmart-metacore-plugin:1.2.4'
 
-            test ':transmart-core-db-tests:1.2.3'
+            test ':transmart-core-db-tests:1.2.4'
         }
     }
 
