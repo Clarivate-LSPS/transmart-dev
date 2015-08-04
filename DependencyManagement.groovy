@@ -1,7 +1,7 @@
 class DependencyManagement {
     def inlinePlugins = [
             'transmart-core': 'transmart-core-db',
-            'rdc-modules': 'Rmodules',
+            'rdc-rmodules': 'Rmodules',
             'folder-management': 'folder-management-plugin'
     ]
 
