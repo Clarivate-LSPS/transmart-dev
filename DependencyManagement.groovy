@@ -6,6 +6,7 @@ class DependencyManagement {
         'rdc-rmodules': 'Rmodules',
         'folder-management': 'folder-management-plugin',
         'summarystatisticsreport': 'summary-statistic-reports',
+        'summarystatisticsdashboard': 'mjff-dashboard',
         'curation-module': 'mjff-curation-module'
     ]
 
