@@ -12,6 +12,8 @@ class DependencyManagement {
             grailsCentral()
             mavenCentral()
 
+            mavenRepo "https://tm-dev.sd.genego.com/artifactory/plugins-snapshot-local/"
+            mavenRepo "https://tm-dev.sd.genego.com/artifactory/plugins-release-local/"
             mavenRepo "https://repo.transmartfoundation.org/content/repositories/public/"
             mavenRepo "https://repo.thehyve.nl/content/repositories/public/"
         }
