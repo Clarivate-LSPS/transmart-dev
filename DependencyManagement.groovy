@@ -4,7 +4,8 @@ class DependencyManagement {
     def inlinePlugins = useSnapshot ? [:] : [
         'transmart-core': 'transmart-core-db',
         'rdc-rmodules': 'Rmodules',
-        'folder-management': 'folder-management-plugin'
+        'folder-management': 'folder-management-plugin',
+        'transmart-gwas': 'transmart-gwas-plugin'
     ]
 
     def configureRepositories(dsl) {
