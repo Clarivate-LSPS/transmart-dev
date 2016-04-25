@@ -5,7 +5,8 @@ class DependencyManagement {
         'transmart-core': 'transmart-core-db',
         'rdc-rmodules': 'Rmodules',
         'folder-management': 'folder-management-plugin',
-        'transmart-gwas': 'transmart-gwas-plugin'
+        'transmart-gwas': 'transmart-gwas-plugin',
+        'transmart-gwas-plink': 'transmart-gwas-plink'
     ]
 
     def configureRepositories(dsl) {
@@ -41,6 +42,7 @@ class DependencyManagement {
             compile ":rdc-rmodules:$transmartVersion"
             runtime ":transmart-core:$transmartVersion"
             compile ":transmart-gwas:$transmartVersion"
+            compile ":transmart-gwas-plink:$transmartVersion"
             //// already included in transmart-gwas
             compile ":transmart-legacy-db:$transmartVersion"
             //// already included in transmart-gwas
@@ -75,7 +77,11 @@ class DependencyManagement {
         def projectsDir = dir.parentFile
         inlinePlugins.entrySet().each { entry ->
             print("Plugin ${entry.key} inlined")
-            grails.plugin.location[entry.key] = new File(projectsDir, entry.value).canonicalPath
+            def pluginPath = new File(projectsDir, entry.value)
+            if (!pluginPath.exists()) {
+                print("Plugin ${entry.key} wasn't found. Skipping.")
+            }
+            grails.plugin.location[entry.key] = pluginPath.canonicalPath
         }
     }
 }
