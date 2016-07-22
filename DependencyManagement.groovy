@@ -1,6 +1,6 @@
 class DependencyManagement {
     def useSnapshot = false
-    def transmartVersion = useSnapshot ? '1.2.2-SNAPSHOT' : '1.2.4'
+    def transmartVersion = useSnapshot ? '1.2.2-SNAPSHOT' : '16.1'
     def inlinePlugins = useSnapshot ? [:] : [
         'transmart-core': 'transmart-core-db',
         'rdc-rmodules': 'Rmodules',
